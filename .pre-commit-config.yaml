@@ -1,0 +1,21 @@
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: system
+        args: ["--profile", "black", "."]
+        files: \.py$
+      - id: black
+        name: black
+        entry: black
+        language: system
+        args: ["."]
+        files: \.py$
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        args: ["--namespace-packages", "--explicit-package-bases"]
+        files: \.py$
